@@ -1,0 +1,87 @@
+{
+  "aircraftMake": "Cirrus Aircraft",
+  "aircraftModel": "SR22 G1",
+  "cruise": [
+    {
+      "modelName": "TestModel",
+      "weights": [
+        {
+          "weight_lbs": 4000.0,
+          "temperatures": [
+            {
+              "disa_c": -10.0,
+              "cruisePoints": [
+                {"altitude_ft": 0.0,"speed_ktas": 142.0,"fuelFlow_pph": 125.8},
+                {"altitude_ft": 2000.0,"speed_ktas": 146.0,"fuelFlow_pph": 124.8},
+                {"altitude_ft": 4000.0,"speed_ktas": 150.0,"fuelFlow_pph": 123.8},
+                {"altitude_ft": 6000.0,"speed_ktas": 153.0,"fuelFlow_pph": 122.8},
+                {"altitude_ft": 8000.0,"speed_ktas": 156.0,"fuelFlow_pph": 121.8},
+                {"altitude_ft": 10000.0,"speed_ktas": 160.0,"fuelFlow_pph": 120.8}
+              ]
+            },
+            {
+              "disa_c": 0.0,
+              "cruisePoints": [
+                {"altitude_ft": 0.0,"speed_ktas": 146.0,"fuelFlow_pph": 129.8},
+                {"altitude_ft": 2000.0,"speed_ktas": 150.0,"fuelFlow_pph": 128.8},
+                {"altitude_ft": 4000.0,"speed_ktas": 153.0,"fuelFlow_pph": 127.8},
+                {"altitude_ft": 6000.0,"speed_ktas": 157.0,"fuelFlow_pph": 126.8},
+                {"altitude_ft": 8000.0,"speed_ktas": 160.0,"fuelFlow_pph": 125.8},
+                {"altitude_ft": 10000.0,"speed_ktas": 162.0,"fuelFlow_pph": 124.8}
+              ]
+            },
+            {
+              "disa_c": 10.0,
+              "cruisePoints": [
+                {"altitude_ft": 0.0,"speed_ktas": 143.0,"fuelFlow_pph": 136.4},
+                {"altitude_ft": 2000.0,"speed_ktas": 147.0,"fuelFlow_pph": 136.0},
+                {"altitude_ft": 4000.0,"speed_ktas": 151.0,"fuelFlow_pph": 135.4},
+                {"altitude_ft": 6000.0,"speed_ktas": 155.0,"fuelFlow_pph": 132.2},
+                {"altitude_ft": 8000.0,"speed_ktas": 158.0,"fuelFlow_pph": 126.8},
+                {"altitude_ft": 10000.0,"speed_ktas": 156.0,"fuelFlow_pph": 125.4}
+              ]
+            }
+          ]
+        },
+        {
+          "weight_lbs": 3000.0,
+          "temperatures": [
+            {
+              "disa_c": -10.0,
+              "cruisePoints": [
+                {"altitude_ft": 0.0,"speed_ktas": 152.0,"fuelFlow_pph": 115.8},
+                {"altitude_ft": 2000.0,"speed_ktas": 156.0,"fuelFlow_pph": 114.8},
+                {"altitude_ft": 4000.0,"speed_ktas": 160.0,"fuelFlow_pph": 113.8},
+                {"altitude_ft": 6000.0,"speed_ktas": 163.0,"fuelFlow_pph": 112.8},
+                {"altitude_ft": 8000.0,"speed_ktas": 166.0,"fuelFlow_pph": 111.8},
+                {"altitude_ft": 10000.0,"speed_ktas": 170.0,"fuelFlow_pph": 110.8}
+              ]
+            },
+            {
+              "disa_c": 0.0,
+              "cruisePoints": [
+                {"altitude_ft": 0.0,"speed_ktas": 156.0,"fuelFlow_pph": 119.8},
+                {"altitude_ft": 2000.0,"speed_ktas": 160.0,"fuelFlow_pph": 118.8},
+                {"altitude_ft": 4000.0,"speed_ktas": 163.0,"fuelFlow_pph": 117.8},
+                {"altitude_ft": 6000.0,"speed_ktas": 167.0,"fuelFlow_pph": 116.8},
+                {"altitude_ft": 8000.0,"speed_ktas": 170.0,"fuelFlow_pph": 115.8},
+                {"altitude_ft": 10000.0,"speed_ktas": 172.0,"fuelFlow_pph": 114.8}
+              ]
+            },
+            {
+              "disa_c": 10.0,
+              "cruisePoints": [
+                {"altitude_ft": 0.0,"speed_ktas": 153.0,"fuelFlow_pph": 126.4},
+                {"altitude_ft": 2000.0,"speed_ktas": 157.0,"fuelFlow_pph": 126.4},
+                {"altitude_ft": 4000.0,"speed_ktas": 161.0,"fuelFlow_pph": 126.4},
+                {"altitude_ft": 6000.0,"speed_ktas": 165.0,"fuelFlow_pph": 122.2},
+                {"altitude_ft": 8000.0,"speed_ktas": 168.0,"fuelFlow_pph": 119.8},
+                {"altitude_ft": 10000.0,"speed_ktas": 166.0,"fuelFlow_pph": 118.4}
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
