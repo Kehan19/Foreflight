@@ -47,12 +47,11 @@ def find_nearest_value(available_values: List[float], target: float) -> float:
     return min(available_values, key=lambda x: abs(x - target))
 
 # Function to get fuel flow based on user input and nearest available data
-def get_fuel_flow(data: AircraftPerformanceData, weight: float, altitude: float, temperature: float) -> Optional[float]:
+def get_fuel_flow_and_speed(data: AircraftPerformanceData, weight: float, altitude: float, temperature: float) -> Optional[float]:
     for model in data.cruise:
         # Find the closest weight
         available_weights = [weight_data.weight_lbs for weight_data in model.weights]
         closest_weight = find_nearest_value(available_weights, weight)
-
         for weight_data in model.weights:
             if weight_data.weight_lbs == closest_weight:
                 # Find the closest temperature
@@ -71,7 +70,38 @@ def get_fuel_flow(data: AircraftPerformanceData, weight: float, altitude: float,
 
     return None
 
+# Function to calculate total fuel burn for a trip considering weight change
+def calculate_fuel_burn(data: AircraftPerformanceData, initial_weight: float, altitude: float, temperature: float, distance: float) -> float:
+    remaining_distance = distance
+    total_fuel_burned = 0.0
+    weight = initial_weight
 
+    # Segment the trip into smaller segments
+    segment_distance = 50.0  # nautical miles per segment
+
+    while remaining_distance > 0:
+        fuel_flow, speed = get_fuel_flow_and_speed(data, weight, altitude, temperature)
+
+        if fuel_flow is None or speed is None:
+            print("Could not find matching performance data.")
+            return None
+
+        # Calculate time for the current segment
+        time_hours = segment_distance / speed
+
+        # Calculate fuel burned in this segment
+        fuel_burned = fuel_flow * time_hours
+
+        # Update weight for next segment
+        weight -= fuel_burned
+
+        # Accumulate total fuel burned
+        total_fuel_burned += fuel_burned
+
+        # Decrease the remaining distance
+        remaining_distance -= segment_distance
+
+    return total_fuel_burned
     
 
 # Main function to run the program
@@ -88,13 +118,16 @@ def main():
     temperature = float(input("Enter temperature (°C): "))
     distance = float(input("Enter the total distance (nautical miles): "))
     # Get the fuel flow based on user input
-    fuel_flow, speed = get_fuel_flow(aircraft_data, weight, altitude, temperature)
+    fuel_flow, speed = get_fuel_flow_and_speed(aircraft_data, weight, altitude, temperature)
+    total_fuel_burned = calculate_fuel_burn(data=aircraft_data, initial_weight=weight, altitude=altitude, temperature=temperature, distance=distance)
     
     flight_time_hours = distance / speed
+    
     print(f"with weight: {weight}, altitude: {altitude}, temperature: {temperature} and distance: {distance}")
     print(f"Closest Fuel Flow (pph): {fuel_flow}")
     print(f"Closest True Airspeed (knots): {speed}")
     print(f"Estimated Flight Time (hours): {flight_time_hours:.2f}")
+    print(f"Total Fuel Burned (lbs): {total_fuel_burned:.2f}")
 
 if __name__ == "__main__":
     main()
